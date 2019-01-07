@@ -1,7 +1,7 @@
 {
   "name": "rels",
   "version": "0.0.0",
-  "description": "⚡ Github release stats for the console",
+  "description": "⚡ Github release analytics for the console",
   "license": "MIT",
   "repository": "klaussinani/arare",
   "author": {
@@ -23,7 +23,7 @@
   "keywords": [
     "github",
     "releases",
-    "stats",
+    "analytics",
     "console",
     "cli"
   ],
