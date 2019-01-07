@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  ⚡ Github release stats for the console
+  ⚡ Github release analytics for the console
 </h4>
 
 <p align="center">
