@@ -1,7 +1,7 @@
 {
   "name": "rels",
   "version": "0.0.0",
-  "description": "⚡ Github release analytics for the console",
+  "description": "Github release analytics for the console",
   "license": "MIT",
   "repository": "klaussinani/rels",
   "author": {
@@ -35,7 +35,10 @@
     "xo": "*"
   },
   "xo": {
-    "space": 2
+    "space": 2,
+    "rules": {
+      "camelcase": 0
+    }
   },
   "dependencies": {
     "chalk": "*",
