@@ -6,6 +6,12 @@
   ⚡ Github release analytics for the console
 </h4>
 
+<div align="center">
+  <a href="https://github.com/klaussinani/rels">
+    <img src="media/header.png" alt="Rels" width="70%">
+  </a>
+</div>
+
 <p align="center">
   <a href="https://travis-ci.com/klaussinani/rels">
     <img alt="Build Status" src="https://travis-ci.com/klaussinani/rels.svg?branch=master">
