@@ -52,7 +52,7 @@ npm install --global rels
 
     Options
       --repo, -r         Repository to get analytics for
-      --number, -n       Number of releases to be displayed
+      --list, -l         Number of releases to be displayed
       --all, -a          Display all releases
       --help, -h         Display help message
       --version, -v      Display installed version
@@ -60,7 +60,7 @@ npm install --global rels
     Examples
       $ rels --repo klaussinani/tusk
       $ rels --repo klaussinani/tusk --all
-      $ rels --repo klaussinani/tusk --number 3
+      $ rels --repo klaussinani/tusk --list 3
 ```
 
 ## Development
