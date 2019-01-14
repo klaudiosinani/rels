@@ -16,10 +16,9 @@
     "node": ">=6"
   },
   "files": [
+    "src",
     "index.js",
-    "cli.js",
-    "help.js",
-    "rels.js"
+    "cli.js"
   ],
   "keywords": [
     "github",
