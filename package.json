@@ -35,10 +35,7 @@
     "xo": "*"
   },
   "xo": {
-    "space": 2,
-    "rules": {
-      "camelcase": 0
-    }
+    "space": 2
   },
   "dependencies": {
     "chalk": "*",
