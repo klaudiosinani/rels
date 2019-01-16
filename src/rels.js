@@ -1,6 +1,6 @@
 'use strict';
 const {get} = require('https');
-const {blue, green, magenta, underline, yellow} = require('chalk');
+const {blue, green, magenta, red, underline, yellow} = require('chalk');
 const signale = require('signale');
 const pkg = require('./../package.json');
 
@@ -27,12 +27,6 @@ class Rels {
     return {
       releases: x => `/repos/${x}/releases`,
       latest: x => `/repos/${x}/releases/latest`
-    };
-  }
-
-  get _badge() {
-    return {
-      latest: x => x.isLatest ? green('[Latest]') : ''
     };
   }
 
@@ -102,10 +96,24 @@ class Rels {
     return total;
   }
 
+  _badges(x) {
+    const badges = [];
+
+    if (x.isLatest) {
+      badges.push(green('[Latest]'));
+    }
+
+    if (x.isPrerelease) {
+      badges.push(red('[Pre-release]'));
+    }
+
+    return badges.join(' ');
+  }
+
   _title(x) {
     return [
       underline(`Release ${x.tag}`),
-      this._badge.latest(x)
+      this._badges(x)
     ].join(' ');
   }
 
@@ -113,7 +121,7 @@ class Rels {
     const result = [];
 
     data.forEach(release => {
-      const {assets, created_at: date, tag_name: tag} = release;
+      const {assets, created_at: date, prerelease: isPrerelease, tag_name: tag} = release;
       const {login: author} = release.author;
 
       result.push({
@@ -122,6 +130,7 @@ class Rels {
         date: this._format.date.short(date),
         dls: this._releaseDls(release),
         isLatest: tag === this._latest.tag,
+        isPrerelease,
         tag
       });
     });
