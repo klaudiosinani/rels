@@ -10,23 +10,23 @@ const {fatal, log, note} = signale;
 
 class Rels {
   constructor() {
-    this._apiURL = 'https://api.github.com/repos';
     this._latestRelease = {};
     this._padding = '     ';
   }
 
   get _opts() {
     return {
+      host: 'api.github.com',
       headers: {
         'user-agent': `${pkg.repository} - ${process.title}`
       }
     };
   }
 
-  get _url() {
+  get _path() {
     return {
-      releases: x => `${this._apiURL}/${x}/releases`,
-      latest: x => `${this._apiURL}/${x}/releases/latest`
+      releases: x => `/repos/${x}/releases`,
+      latest: x => `/repos/${x}/releases/latest`
     };
   }
 
@@ -187,9 +187,9 @@ class Rels {
     this._displayStats(data);
   }
 
-  _get(repo) {
+  _get(path) {
     return new Promise((resolve, reject) => {
-      const req = get(repo, this._opts, res => {
+      const req = get(Object.assign(this._opts, {path}), res => {
         const body = [];
 
         res.on('data', x => body.push(x.toString('utf8')));
@@ -213,11 +213,11 @@ class Rels {
   }
 
   _getAll(repo) {
-    return this._get(this._url.releases(repo));
+    return this._get(this._path.releases(repo));
   }
 
   _getLatest(repo) {
-    return this._get(this._url.latest(repo));
+    return this._get(this._path.latest(repo));
   }
 
   async init(repo, n) {
