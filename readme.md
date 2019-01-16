@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="https://github.com/klaussinani/rels">
-    <img src="media/header.png" alt="Rels" width="70%">
+    <img src="media/header.png" alt="Rels" width="68%">
   </a>
 </div>
 
