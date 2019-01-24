@@ -46,8 +46,16 @@ Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts o
 
 ## Install
 
+### NPM
+
 ```bash
 npm install --global rels
+```
+
+### Snapcraft
+
+```bash
+snap install rels
 ```
 
 ## Usage
