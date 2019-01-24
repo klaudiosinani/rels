@@ -1,0 +1,29 @@
+name: rels
+version: git
+summary: Github release analytics for the console
+description: |
+  By utilizing a simple and minimal usage syntax rels enables you to easily view various
+  analytics and stats regarding the releases of any GitHub repository, displayed in a clean
+  and concise manner, right from within your terminal.
+
+grade: stable
+confinement: strict
+
+architectures:
+  - amd64
+  - i386
+
+apps:
+  rels:
+    command: rels
+    plugs:
+      - home
+      - network
+      - network-control
+
+parts:
+  rels:
+    plugin: nodejs
+    node-engine: 10.15.0
+    node-package-manager: yarn
+    source: .
