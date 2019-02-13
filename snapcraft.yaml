@@ -1,5 +1,6 @@
 name: rels
-version: git
+version: '0.0.0'
+version-script: git describe --always | cut -c 2-
 summary: Github release analytics for the console
 description: |
   By utilizing a simple and minimal usage syntax rels enables you to easily view various
