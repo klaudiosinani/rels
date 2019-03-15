@@ -46,6 +46,12 @@ Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts o
 
 ## Install
 
+### Yarn
+
+```bash
+yarn global add rels
+```
+
 ### NPM
 
 ```bash
