@@ -221,30 +221,31 @@ class Rels {
     });
   }
 
-  _getAll(repo) {
-    return this._get(this._path.releases(repo));
-  }
+  async _getReleaseData(repo) {
+    const total = await this._get(this._path.releases(repo));
 
-  _getLatest(repo) {
-    return this._get(this._path.latest(repo));
+    if (Array.isArray(total) && total.length === 0) {
+      throw new Error(`No available release data for the ${repo} repository`);
+    }
+
+    const latest = await this._get(this._path.latest(repo));
+
+    return [total, latest];
   }
 
   async init(repo, n) {
-    let [data, latest] = [];
+    let [total, latest] = [];
 
     try {
-      [data, latest] = await Promise.all([
-        this._getAll(repo),
-        this._getLatest(repo)
-      ]);
+      [total, latest] = await this._getReleaseData(repo);
     } catch (error) {
       return fatal(error);
     }
 
     this._latestRelease = Object.assign({}, latest);
-    [data, n] = [this._formatData(data), this._format.listN(n)];
+    [total, n] = [this._formatData(total), this._format.listN(n)];
 
-    this._display(repo, data, n);
+    this._display(repo, total, n);
   }
 }
 
