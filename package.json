@@ -1,6 +1,6 @@
 {
   "name": "rels",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Github release analytics for the console",
   "license": "MIT",
   "repository": "klaussinani/rels",
