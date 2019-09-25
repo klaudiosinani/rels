@@ -22,6 +22,8 @@
 
 By utilizing a simple and minimal usage syntax rels enables you to easily view various analytics & stats regarding the releases of any GitHub repository, displayed in a clean & concise manner, right from within your terminal.
 
+You can now support the development process by donating on [Open Collective](https://opencollective.com/klaussinani).
+
 Visit the [contributing guidelines](https://github.com/klaussinani/rels/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
