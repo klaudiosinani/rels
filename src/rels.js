@@ -1,6 +1,5 @@
 'use strict';
 const {get} = require('https');
-const {blue, green, magenta, red, underline, yellow} = require('chalk');
 const signale = require('signale');
 const pkg = require('./../package.json');
 
@@ -100,11 +99,11 @@ class Rels {
     const badges = [];
 
     if (x.isLatest) {
-      badges.push(green('[Latest]'));
+      badges.push('[Latest]');
     }
 
     if (x.isPrerelease) {
-      badges.push(red('[Pre-release]'));
+      badges.push('[Pre-release]');
     }
 
     return badges.join(' ');
@@ -112,7 +111,7 @@ class Rels {
 
   _title(x) {
     return [
-      underline(`Release ${x.tag}`),
+      `Release ${x.tag}`,
       this._badges(x)
     ].join(' ');
   }
@@ -177,17 +176,17 @@ class Rels {
     ].map(this._format.num);
 
     const message = [
-      `In total: ${magenta(d)} downloads, ${magenta(a)} assets & ${magenta(r)} releases.`,
-      `On average, each release receives ${blue(dpr)} downloads.`,
-      `Most popular release is ${yellow(pt)} with ${yellow(pd)} downloads.`,
-      `Latest release is ${green(lt)} created on ${green(ld)}.`
+      `In total: ${d} downloads, ${a} assets & ${r} releases.`,
+      `On average, each release receives ${dpr} downloads.`,
+      `Most popular release is ${pt} with ${pd} downloads.`,
+      `Latest release is ${lt} created on ${ld}.`
     ];
 
     log(message.join('\n'));
   }
 
   _display(repo, data, n) {
-    log(`\nLast ${n >= data.length ? data.length : n} releases of ${underline(repo)} repository:\n`);
+    log(`\nLast ${n >= data.length ? data.length : n} releases of ${repo} repository:\n`);
 
     data.slice(0, n).reverse().forEach(x => {
       this._displayRelease(x);
