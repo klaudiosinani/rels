@@ -11,7 +11,7 @@ const {fatal, log, note} = signale;
 class Rels {
   constructor() {
     this._latestRelease = {};
-    this._padding = '     ';
+    this._padding = new Array(6).join(' ');
   }
 
   get _opts() {
