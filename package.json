@@ -34,7 +34,10 @@
     "xo": "*"
   },
   "xo": {
-    "space": 2
+    "space": 2,
+    "rule": {
+      "unicorn/string-content": 0
+    }
   },
   "dependencies": {
     "meow": "^5.0.0",
