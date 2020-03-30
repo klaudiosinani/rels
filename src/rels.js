@@ -1,11 +1,8 @@
 'use strict';
 const {get} = require('https');
-const signale = require('signale');
 const pkg = require('./../package.json');
 
-signale.config({displayLabel: false});
-
-const {fatal, log, note} = signale;
+const {log} = console;
 
 class Rels {
   constructor() {
@@ -150,7 +147,7 @@ class Rels {
       `Author: @${x.author}\n`
     ];
 
-    note(this._title(x));
+    log(this._title(x));
     log(message.join(this._padding));
   }
 
@@ -230,7 +227,7 @@ class Rels {
     try {
       [total, latest] = await this._getReleaseData(repo);
     } catch (error) {
-      return fatal(error);
+      return log(error);
     }
 
     this._latestRelease = Object.assign({}, latest);
