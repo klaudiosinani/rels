@@ -51,48 +51,29 @@ class Rels {
   }
 
   _getPopular(data) {
-    const obj = {};
+    const dlsTagsDict = data.reduce((acc, x) => {
+      acc[x.dls] = x.tag;
+      return acc;
+    }, {});
 
-    data.forEach(x => {
-      obj[x.dls] = x.tag;
-    });
-
-    const popularDls = Math.max(...Object.keys(obj));
+    const popularDls = Math.max(...Object.keys(dlsTagsDict));
 
     return {
       popularDls,
-      popularTag: obj[popularDls]
+      popularTag: dlsTagsDict[popularDls]
     };
   }
 
   _releaseDls(x) {
-    let total = 0;
-
-    x.assets.forEach(asset => {
-      total += asset.download_count;
-    });
-
-    return total;
+    return x.assets.reduce((acc, asset) => acc + asset.download_count, 0);
   }
 
   _totalDls(data) {
-    let total = 0;
-
-    data.forEach(release => {
-      total += release.dls;
-    });
-
-    return total;
+    return data.reduce((acc, release) => acc + release.dls, 0);
   }
 
   _totalAssets(data) {
-    let total = 0;
-
-    data.forEach(release => {
-      total += release.assets;
-    });
-
-    return total;
+    return data.reduce((acc, release) => acc + release.assets, 0);
   }
 
   _badges(x) {
