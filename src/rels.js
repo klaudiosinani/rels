@@ -47,12 +47,12 @@ class Rels {
       },
       listN: x => Number(x) || 5,
       num: x => {
-        if (x >= Math.pow(10, 6)) {
-          return (x / Math.pow(10, 6)).toFixed(2) + 'm';
+        if (x >= (10 ** 6)) {
+          return (x / (10 ** 6)).toFixed(2) + 'm';
         }
 
-        if (x >= Math.pow(10, 3)) {
-          return (x / Math.pow(10, 3)).toFixed(2) + 'k';
+        if (x >= (10 ** 3)) {
+          return (x / (10 ** 3)).toFixed(2) + 'k';
         }
 
         return x;
