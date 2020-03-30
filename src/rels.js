@@ -56,7 +56,8 @@ class Rels {
         }
 
         return x;
-      }
+      },
+      underline: x => `\u001B[4m${x}\u001B[24m`
     };
   }
 
