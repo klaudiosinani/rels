@@ -46,7 +46,17 @@ class Rels {
         }
       },
       listN: x => Number(x) || 5,
-      num: x => x >= 1000000 ? (x / 1000000).toFixed(2) + 'm' : x >= 1000 ? (x / 1000).toFixed(2) + 'k' : x
+      num: x => {
+        if (x >= Math.pow(10, 6)) {
+          return (x / Math.pow(10, 6)).toFixed(2) + 'm';
+        }
+
+        if (x >= Math.pow(10, 3)) {
+          return (x / Math.pow(10, 3)).toFixed(2) + 'k';
+        }
+
+        return x;
+      }
     };
   }
 
