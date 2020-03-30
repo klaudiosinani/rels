@@ -178,13 +178,13 @@ class Rels {
 
   _get(path) {
     return new Promise((resolve, reject) => {
-      const req = get(Object.assign(this._opts, {path}), res => {
+      const request = get(Object.assign(this._opts, {path}), response => {
         const body = [];
 
-        res.on('data', x => body.push(x.toString('utf8')));
+        response.on('data', x => body.push(x.toString('utf8')));
 
-        res.on('end', () => {
-          const {statusCode: sc} = res;
+        response.on('end', () => {
+          const {statusCode: sc} = response;
           const data = JSON.parse(body.join(''));
 
           if (sc < 200 || sc > 299) {
@@ -195,9 +195,9 @@ class Rels {
         });
       });
 
-      req.on('error', err => reject(err));
+      request.on('error', err => reject(err));
 
-      req.end();
+      request.end();
     });
   }
 
