@@ -100,9 +100,21 @@ class Rels {
 
   _title(x) {
     return [
-      `Release ${x.tag}`,
+      '*',
+      this._format.underline(`Release ${x.tag}`),
       this._badges(x)
     ].join(' ');
+  }
+
+  _body(x) {
+    const body = [
+      `Assets: ${this._format.num(x.assets)}`,
+      `Downloads: ${this._format.num(x.dls)}`,
+      `Date: ${x.date}`,
+      `Author: @${x.author}`
+    ];
+
+    return body.map(x => this._padding.concat(x, '\n')).join('');
   }
 
   _formatData(data) {
@@ -139,16 +151,12 @@ class Rels {
   }
 
   _displayRelease(x) {
-    const message = [
-      '',
-      `Assets: ${this._format.num(x.assets)}\n`,
-      `Downloads: ${this._format.num(x.dls)}\n`,
-      `Date: ${x.date}\n`,
-      `Author: @${x.author}\n`
-    ];
+    const release = [
+      this._title(x),
+      this._body(x)
+    ].join('\n');
 
-    log(this._title(x));
-    log(message.join(this._padding));
+    log(release);
   }
 
   _displayStats(data) {
@@ -165,17 +173,17 @@ class Rels {
     ].map(this._format.num);
 
     const message = [
-      `In total: ${d} downloads, ${a} assets & ${r} releases.`,
-      `On average, each release receives ${dpr} downloads.`,
-      `Most popular release is ${pt} with ${pd} downloads.`,
-      `Latest release is ${lt} created on ${ld}.`
+      `Total: ${d} downloads, ${a} assets & ${r} releases.`,
+      `On average: ${dpr} downloads per release.`,
+      `Most popular: ${pt} with ${pd} downloads.`,
+      `Latest: ${lt} on ${ld}.`
     ];
 
     log(message.join('\n'));
   }
 
   _display(repo, data, n) {
-    log(`\nLast ${n >= data.length ? data.length : n} releases of ${repo} repository:\n`);
+    log(`\nLast ${n >= data.length ? data.length : n} releases of ${this._format.underline(repo)} repository:\n`);
 
     data.slice(0, n).reverse().forEach(x => {
       this._displayRelease(x);
