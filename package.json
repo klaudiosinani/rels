@@ -13,7 +13,7 @@
     "rels": "cli.js"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=8"
   },
   "files": [
     "src",
