@@ -26,6 +26,6 @@ apps:
 parts:
   rels:
     plugin: nodejs
-    node-engine: 10.15.0
+    node-engine: 12.16.2
     node-package-manager: yarn
     source: .
