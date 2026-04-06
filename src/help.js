@@ -12,7 +12,7 @@ module.exports = `
       --version, -v      Display installed version
 
     Examples
-      $ rels --repo klaussinani/tusk
-      $ rels --repo klaussinani/tusk --all
-      $ rels --repo klaussinani/tusk --list 3
+      $ rels --repo klaudiosinani/tusk
+      $ rels --repo klaudiosinani/tusk --all
+      $ rels --repo klaudiosinani/tusk --list 3
 `;

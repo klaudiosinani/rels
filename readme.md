@@ -7,14 +7,14 @@
 </h4>
 
 <div align="center">
-  <a href="https://github.com/klaussinani/rels">
+  <a href="https://github.com/klaudiosinani/rels">
     <img src="media/header.png" alt="Rels" width="68%">
   </a>
 </div>
 
 <p align="center">
-  <a href="https://travis-ci.com/klaussinani/rels">
-    <img alt="Build Status" src="https://travis-ci.com/klaussinani/rels.svg?branch=master">
+  <a href="https://travis-ci.com/klaudiosinani/rels">
+    <img alt="Build Status" src="https://travis-ci.com/klaudiosinani/rels.svg?branch=master">
   </a>
 </p>
 
@@ -22,11 +22,9 @@
 
 By utilizing a simple and minimal usage syntax rels enables you to easily view various analytics & stats regarding the releases of any GitHub repository, displayed in a clean & concise manner, right from within your terminal.
 
-You can now support the development process through [GitHub Sponsors](https://github.com/sponsors/klaussinani).
+You can now support the development process through [GitHub Sponsors](https://github.com/sponsors/klaudiosinani).
 
-Visit the [contributing guidelines](https://github.com/klaussinani/rels/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
-
-Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
+Visit the [contributing guidelines](https://github.com/klaudiosinani/rels/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Highlights
 
@@ -80,14 +78,14 @@ snap install rels
       --version, -v      Display installed version
 
     Examples
-      $ rels --repo klaussinani/tusk
-      $ rels --repo klaussinani/tusk --all
-      $ rels --repo klaussinani/tusk --list 3
+      $ rels --repo klaudiosinani/tusk
+      $ rels --repo klaudiosinani/tusk --all
+      $ rels --repo klaudiosinani/tusk --list 3
 ```
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/rels/blob/master/contributing.md).
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaudiosinani/rels/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd rels`
@@ -96,15 +94,15 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Related
 
-- [signale](https://github.com/klaussinani/signale) - Highly configurable logging utility
-- [qoa](https://github.com/klaussinani/qoa) - Minimal interactive command-line prompts
-- [taskbook](https://github.com/klaussinani/taskbook) - Tasks, boards & notes for the command-line habitat
-- [hyperocean](https://github.com/klaussinani/hyperocean) - Deep oceanic blue Hyper terminal theme
+- [signale](https://github.com/klaudiosinani/signale) - Highly configurable logging utility
+- [qoa](https://github.com/klaudiosinani/qoa) - Minimal interactive command-line prompts
+- [taskbook](https://github.com/klaudiosinani/taskbook) - Tasks, boards & notes for the command-line habitat
+- [hyperocean](https://github.com/klaudiosinani/hyperocean) - Deep oceanic blue Hyper terminal theme
 
 ## Team
 
-- Klaus Sinani [(@klaussinani)](https://github.com/klaussinani)
+- Klaudio Sinani [(@klaudiosinani)](https://github.com/klaudiosinani)
 
 ## License
 
-[MIT](https://github.com/klaussinani/rels/blob/master/license.md)
+[MIT](https://github.com/klaudiosinani/rels/blob/master/license.md)
